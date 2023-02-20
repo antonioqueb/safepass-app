@@ -19,7 +19,9 @@
             font-size: 16px;
         }
     </style>
+    
 </head>
+
 <body>
     <div class="password">{{ password }}</div>
     <button onclick="generatePassword()">Generar contraseña</button>
@@ -30,5 +32,7 @@
                 .then(data => document.querySelector('.password').textContent = data.password);
         }
     </script>
+
 </body>
+
 </html>
