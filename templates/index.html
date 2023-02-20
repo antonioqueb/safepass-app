@@ -13,40 +13,42 @@
             color: #fff;
         }
         h1 {
-            font-size: 4vw; /* Tamaño de letra responsive */
+            font-size: 5vw; /* Tamaño de letra responsive */
             text-align: center;
             text-shadow: 2px 2px #ff0; /* Sombra amarilla */
         }
         .password {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 6vw;
+            margin-bottom: 2vw;
             text-align: center;
             cursor: pointer; /* Cambia el cursor al pasar sobre la contraseña */
             user-select: all; /* Selecciona todo el texto al hacer clic en la contraseña */
         }
         button {
-            margin-top: 20px; /* Separación entre la contraseña y el botón */
-            padding: 10px;
-            font-size: 16px;
+            margin-top: 2vw; /* Separación entre la contraseña y el botón */
+            padding: 2vw;
+            font-size: 3vw;
             background-color: #008CBA; /* Color de fondo del botón */
             color: white; /* Texto del botón en blanco */
             border: none;
-            border-radius: 5px;
+            border-radius: 1vw;
         }
         .github-link {
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            margin-bottom: 10px;
+            margin-bottom: 1vw;
             color: white;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 3vw;
         }
     </style>
 </head>
 <body>
     <h1>¡Genera una contraseña segura ahora mismo!</h1>
+    <br/>
+    <br/>
     <div class="password" onclick="selectPassword()">{{ password }}</div>
     <button onclick="generatePassword()">Generar contraseña</button>
     <a href="https://github.com/antonioqueb" target="_blank" class="github-link">Mi GitHub: antonioqueb</a>
