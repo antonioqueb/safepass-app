@@ -5,26 +5,43 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-color: #4CAF50; /* Fondo llamativo verde */
         }
         .password {
-            font-size: 24px;
+            font-size: 36px;
             margin-bottom: 20px;
             text-align: center;
+            color: white; /* Texto de la contraseña en blanco */
         }
         button {
+            margin-top: 20px; /* Separación entre la contraseña y el botón */
             padding: 10px;
             font-size: 16px;
+            background-color: #008CBA; /* Color de fondo del botón */
+            color: white; /* Texto del botón en blanco */
+            border: none;
+            border-radius: 5px;
+        }
+        .github-link {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
         }
     </style>
-    
 </head>
-
 <body>
     <div class="password">{{ password }}</div>
     <button onclick="generatePassword()">Generar contraseña</button>
+    <a href="https://github.com/antonioqueb" target="_blank" class="github-link">Visita mi GitHub</a>
     <script>
         function generatePassword() {
             fetch('/generate-password')
@@ -32,7 +49,5 @@
                 .then(data => document.querySelector('.password').textContent = data.password);
         }
     </script>
-
 </body>
-
 </html>
