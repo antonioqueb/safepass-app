@@ -22,6 +22,7 @@
             margin-bottom: 20px;
             text-align: center;
             cursor: pointer; /* Cambia el cursor al pasar sobre la contraseña */
+            user-select: all; /* Selecciona todo el texto al hacer clic en la contraseña */
         }
         button {
             margin-top: 20px; /* Separación entre la contraseña y el botón */
@@ -46,7 +47,7 @@
 </head>
 <body>
     <h1>¡Genera una contraseña segura ahora mismo!</h1>
-    <div class="password" onclick="copyPassword()">{{ password }}</div>
+    <div class="password" onclick="selectPassword()">{{ password }}</div>
     <button onclick="generatePassword()">Generar contraseña</button>
     <a href="https://github.com/antonioqueb" target="_blank" class="github-link">Mi GitHub: antonioqueb</a>
     <script>
@@ -56,13 +57,12 @@
                 .then(data => document.querySelector('.password').textContent = data.password);
         }
 
-        function copyPassword() {
+        function selectPassword() {
             var password = document.querySelector('.password');
             var range = document.createRange();
             range.selectNode(password);
+            window.getSelection().removeAllRanges();
             window.getSelection().addRange(range);
-            document.execCommand('copy');
-            alert('Contraseña copiada: ' + password.textContent);
         }
     </script>
 </body>
