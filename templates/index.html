@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generador de contraseñas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .password {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="password">{{ password }}</div>
+    <button onclick="generatePassword()">Generar contraseña</button>
+    <script>
+        function generatePassword() {
+            fetch('/generate-password')
+                .then(response => response.json())
+                .then(data => document.querySelector('.password').textContent = data.password);
+        }
+    </script>
+</body>
+</html>
