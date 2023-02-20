@@ -9,30 +9,37 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #8F5BD9; /* Fondo llamativo verde */
+            background-color: #8F5BD9; /* Fondo llamativo morado */
             color: #F0F0F2;
             margin: 1rem; /* Margen en todos los lados */
         }
         h1 {
             font-size: 3rem; /* Tamaño de letra */
             text-align: center;
-            text-shadow: 2px 2px #A066F2; /* Sombra amarilla */
+            text-shadow: 2px 2px #A066F2; /* Sombra clara */
             margin-bottom: 1rem; /* Separación entre el título y la contraseña */
         }
-        .password {
-            font-size: 4rem;
+        .password-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1rem;
+            max-width: 50%; /* Limita el ancho a 50% del ancho de la ventana */
             text-align: center;
+        }
+        .password {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
             cursor: pointer; /* Cambia el cursor al pasar sobre la contraseña */
             user-select: all; /* Selecciona todo el texto al hacer clic en la contraseña */
-            max-width: 50%; /* Limita el ancho a 50% del ancho de la ventana */
         }
         button {
             margin-top: 1rem; /* Separación entre la contraseña y el botón */
             padding: 1rem;
             font-size: 1.5rem;
-            background-color: #7587BF; /* Color de fondo del botón */
-            color: #F0F0F2; /* Texto del botón en blanco */
+            background-color: #F0F0F2; /* Color de fondo del botón */
+            color: #6E3DD9; /* Texto del botón en blanco */
             border: none;
             border-radius: 0.5rem;
             max-width: 50%; /* Limita el ancho a 50% del ancho de la ventana */
@@ -52,9 +59,10 @@
 <body>
     <h1>¡Genera una contraseña segura ahora mismo!</h1>
     <br/>
-    <br/>
-    <div class="password" onclick="selectPassword()">{{ password }}</div>
-    <button onclick="generatePassword()">Generar contraseña</button>
+    <div class="password-container">
+        <div class="password" onclick="selectPassword()">{{ password }}</div>
+        <button onclick="generatePassword()">Generar contraseña</button>
+    </div>
     <a href="https://github.com/antonioqueb" target="_blank" class="github-link">Mi GitHub: antonioqueb</a>
     <script>
         function generatePassword() {
