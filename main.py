@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', password=secrets.token_hex(16))
+    return render_template('index.html', password=secrets.token_hex(12))
 
 @app.route('/generate-password')
 def generate_password():
-    password = secrets.token_hex(16)
+    password = secrets.token_hex(12)
     return {'password': password}
 
 if __name__ == '__main__':
